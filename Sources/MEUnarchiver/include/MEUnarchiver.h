@@ -11,16 +11,18 @@
 // http://ia700409.us.archive.org/zipview.php?zip=/12/items/ftp_nextstuff_info/nextstuff.info.2012.11.zip
 // http://archive.org/download/ftp_nextstuff_info/nextstuff.info.2012.11.zip/nextstuff.info%2Fmirrors%2Fotto%2Fhtml%2Fpub%2FDarwin%2FPublicSource%2FDarwin%2Fobjc-1.tar.gz
  
+#import <Foundation/Foundation.h>
+
 @interface MEUnarchiver : NSCoder
  
-- (id)initForReadingWithData:(NSData*)data;
+- (id _Nullable)initForReadingWithData:(NSData * _Nonnull)data;
  
-@property (nonatomic, readonly, copy)   NSData* data;
-@property (nonatomic, readonly)         BOOL    isAtEnd;
+@property (nonatomic, readonly, copy)   NSData * _Nonnull data;
+@property (nonatomic, readonly)         BOOL              isAtEnd;
  
 // Uses NSArchiver under OS X and MEArchiver under iOS.
-+ (id) compatibilityUnarchiveObjectWithData:(NSData*)data
-                            decodeClassName:(NSString*)archiveClassName
-                                asClassName:(NSString*)className;
++ (id _Nullable) compatibilityUnarchiveObjectWithData:(NSData * _Nonnull)data
+                                      decodeClassName:(NSString * _Nullable)archiveClassName
+                                          asClassName:(NSString * _Nullable)className;
 
 @end
